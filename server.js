@@ -4,7 +4,7 @@ const http = require('http')
 const app = express()
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const PORT = process.env.PORT || 5000
 
 var users = ['oscar', 'juan', 'marcos'];
 var books = [
@@ -44,6 +44,6 @@ app.delete('/users/:id',(req, res) => {
     res.send('User delete')
 })
  
-http.createServer(app).listen(port, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+http.createServer(app).listen(PORT, () => {
+  console.log(`Server running at http://${hostname}:${PORT}/`);
 })
