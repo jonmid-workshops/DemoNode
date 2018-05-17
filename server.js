@@ -6,7 +6,6 @@ const app = express()
 const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 5000
 
-// var users = ['oscar', 'juan', 'marcos', 'julieta', 'jonathan'];
 var users = [
     {name: 'oscar'},
     {name: 'juan'}
@@ -25,16 +24,16 @@ app.get('/', (req, res) => {
   res.status(200).send("Welcome to API REST")
 })
 
+// Listar usuarios
 app.get('/users', (req, res) => {
     res.send(users)
 })
 
+// Crear usuarios
 app.post('/users', (req, res) => {
     let data = req.query;
     let itemUser = {name: data.user_name};
     users.push(itemUser)
-    // users.push(data.user_name)
-    // users.push(data.user_name)
     res.send("New user add")
 })
 
