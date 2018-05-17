@@ -41,7 +41,6 @@ app.post('/users', (req, res) => {
 app.patch('/users/:id',(req, res) => {
     let params = req.params;
     let data = req.query;
-    let item = {};
     users[params.id] = data.user_name
     res.send("User update")
 })
