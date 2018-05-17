@@ -31,13 +31,17 @@ app.get('/users', (req, res) => {
 
 app.post('/users', (req, res) => {
     let data = req.query;
-    users.push(data.user_name)
+    let itemUser = {name: data.user_name};
+    users.push(itemUser)
+    // users.push(data.user_name)
+    // users.push(data.user_name)
     res.send("New user add")
 })
 
 app.patch('/users/:id',(req, res) => {
     let params = req.params;
     let data = req.query;
+    let item = {};
     users[params.id] = data.user_name
     res.send("User update")
 })
