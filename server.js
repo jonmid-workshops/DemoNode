@@ -37,13 +37,15 @@ app.post('/users', (req, res) => {
     res.send("New user add")
 })
 
+// Actualizar usuarios
 app.patch('/users/:id',(req, res) => {
     let params = req.params;
     let data = req.query;
-    users[params.id] = data.user_name
+    users[params.id] = {name: data.user_name};
     res.send("User update")
 })
 
+// Eliminar usuarios
 app.delete('/users/:id',(req, res) => {
     let params = req.params;
     users.splice(params.id, 1);
