@@ -32,8 +32,7 @@ app.get('/users', (req, res) => {
 // Crear usuarios
 app.post('/users', (req, res) => {
     let data = req.query;
-    // let itemUser = {name: data.Name};
-    let itemUser = data;
+    let itemUser = {name: data.user_name};
     users.push(itemUser)
     res.send("New user add")
     // res.send(data)
