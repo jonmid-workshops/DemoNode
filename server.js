@@ -10,10 +10,6 @@ var users = [
     {name: 'oscar'},
     {name: 'juan'}
 ];
-var books = [
-    {titulo: 'El señor de los anillos', autor: 'J.R.R. Tolkien'},
-    {titulo: "Cancion de hielo y fuego", autor: 'George RR Martin'}
-];
 
 // soporte para body codificados en jsonsupport
 app.use(bodyParser.json());
@@ -31,11 +27,10 @@ app.get('/users', (req, res) => {
 
 // Crear usuarios
 app.post('/users', (req, res) => {
-    let data = req.query;
-    let itemUser = {name: data.user_name};
+    let data = req.body;
+    let itemUser = {name: data.Name};
     users.push(itemUser)
     res.send("New user add")
-    // res.send(data)
 })
 
 // Actualizar usuarios
