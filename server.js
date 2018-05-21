@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
 
 // Listar usuarios
 app.get('/users', (req, res) => {
+    let pos = 0;
+    users.forEach(function(entry) {
+        entry.id = pos;
+        pos++;
+    });
     res.send(users)
 })
 
