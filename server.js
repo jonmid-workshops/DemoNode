@@ -7,8 +7,8 @@ const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 5000
 
 var users = [
-    {name: 'oscar'},
-    {name: 'juan'}
+    {id: 0, name: 'oscar'},
+    {id: 1, name: 'juan'}
 ];
 
 // soporte para body codificados en jsonsupport
