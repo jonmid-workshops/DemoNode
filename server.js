@@ -28,7 +28,8 @@ app.get('/users', (req, res) => {
 // Crear usuarios
 app.post('/users', (req, res) => {
     let data = req.body;
-    let itemUser = {name: data.Name};
+    let consecutive = users.length;
+    let itemUser = {id: consecutive, name: data.Name};
     users.push(itemUser)
     res.send("New user add")
 })
