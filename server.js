@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 // Listar usuarios
 app.get('/users', (req, res) => {
-    res.send(users.reverse())
+    res.send(users)
 })
 
 // Crear usuarios
