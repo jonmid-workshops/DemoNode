@@ -42,8 +42,8 @@ app.post('/users', (req, res) => {
 // Actualizar usuarios
 app.patch('/users/:id',(req, res) => {
     let params = req.params;
-    let data = req.query;
-    users[params.id] = {name: data.user_name};
+    let data = req.body;
+    users[params.id]['name'] = data.Name;
     res.send("User update")
 })
 
