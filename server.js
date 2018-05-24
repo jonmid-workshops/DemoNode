@@ -40,7 +40,7 @@ app.post('/users', (req, res) => {
 })
 
 // Actualizar usuarios
-app.patch('/users/:id',(req, res) => {
+app.put('/users/:id',(req, res) => {
     let params = req.params;
     let data = req.body;
     users[params.id]['name'] = data.Name;
